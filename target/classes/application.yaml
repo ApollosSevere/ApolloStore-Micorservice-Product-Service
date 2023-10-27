@@ -18,9 +18,12 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   datasource:
-    url: jdbc:postgresql://${INTERNAL_URL:localhost}:5432/compusunshine
-    username: AXS1QFH
-    password: 123456
+    #    username: AXS1QFH
+    #    password: 123456
+    #    url: jdbc:postgresql://${INTERNAL_URL:localhost}:5432/compusunshine
+    username: ${DB_USERNAME:AXS1QFH}
+    password: ${DB_PASSWORD:123456}
+    url: ${DB_HOST:jdbc:postgresql://${INTERNAL_URL:localhost}:5432/compusunshine}
     driver-class-name: org.postgresql.Driver
 
 application:
@@ -28,11 +31,11 @@ application:
     jwt:
       secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
