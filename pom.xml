@@ -46,10 +46,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>4.0.3</version>
 		</dependency>
 
 		<dependency>
@@ -67,12 +67,7 @@
 			<version>6.1.4</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.tomakehurst</groupId>
-			<artifactId>wiremock-jre8</artifactId>
-			<version>2.35.0</version>
-			<scope>test</scope>
-		</dependency>
+
 
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -92,6 +87,12 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+
 
 	</dependencies>
 	<dependencyManagement>
@@ -103,7 +104,10 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
 		</dependencies>
+
+
 	</dependencyManagement>
 
 	<build>
@@ -121,20 +125,7 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>3.3.2</version>
-				<configuration>
-					<from>
-						<image>openjdk:17</image>
-					</from>
-					<to>
-						<image>registry.hub.docker.com/drsevere/ecommerce-microservices-product-service</image>
-						<tags>${project.version}</tags>
-					</to>
-				</configuration>
-			</plugin>
+
 		</plugins>
 	</build>
 
